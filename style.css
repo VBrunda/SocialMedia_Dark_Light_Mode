@@ -1,0 +1,297 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root{
+
+    /* Colors */
+    --lime-green: hsl(163, 72%, 41%);
+    --bright-red: hsl(356, 69%, 56%);
+    --facebook: hsl(208, 92%, 53%);
+    --twitter: hsl(203, 89%, 53%);
+    --instagram: linear-gradient(45deg, hsl(37, 97%, 70%) 0%,hsl(0, 92%, 65%) 50%, hsl(329, 70%, 58%) 100%);
+    --youtube: hsl(348, 97%, 39%); 
+
+    /* toggle button */
+    --bg-dark-toggle: linear-gradient(45deg, hsl(210, 86%, 63%) 0%, hsl(88, 82%, 71%) 100% );
+    --bg-light-toggle: hsl(230, 22%, 74%);
+    --toggle-light-btn: hsl(0, 0%, 100%);
+    --toggle-dark-btn: hsl(230, 17%, 14%);
+
+    /* Dark Theme */
+    --bg-dark: hsl(230, 17%, 14%);
+    --bg-header-dark: hsl(231, 19%, 22%);
+    --bg-dark-card: hsl(228, 28%, 20%);
+    --text-light-1: hsl(228, 34%, 66%);
+    --text-light-2: hsl(0, 0%, 100%);
+
+    /* Light Theme */
+    --bg-light: hsl(0, 0%, 100%);
+    --bg-header-light:  hsl(225, 100%, 98%);
+    --bg-light-card:  hsl(227, 47%, 96%); 
+    --text-dark-1: hsl(228, 12%, 44%);
+    --text-dark-2: hsl(230, 17%, 14%);
+
+    /* default bg and color(dark mode) */    
+    --background: var(--bg-dark);
+    --header-background: var(--bg-header-dark); 
+    --text-color-1: var(--text-light-1);
+    --text-color-2: var(--text-light-2);
+    --card-background: var(--bg-dark-card);
+    
+
+    /* font-size */
+    --cardHeading-font-size: 14px;
+    --font-size-1: 1.2rem;
+    --font-size-2: 3rem;
+    --font-size-3: 4rem;
+
+    /* font family */
+    --font-family: "Inter", sans-serif;
+
+    /* font-weight */
+    --weight-regular: 400;
+    --weight-bold: 700;
+
+    /* text spacing */
+    --letter-spacing-1: 0.15rem;
+    --letter-spacing-2: 0.3rem;
+}
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    background-color: var(--background);
+    color: var(--text-color-2);
+    margin: 1rem auto;
+    padding: 0 auto;
+}
+
+.light{  
+  --background: var(--bg-light);
+  --header-background: var(--bg-header-light); 
+  --text-color-1: var(--text-dark-1);
+  --text-color-2: var(--text-dark-2);
+  --card-background: var(--bg-light-card);
+}
+
+.container{
+  margin: 2rem;
+  padding: 10px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+h1{
+  font-size: var(--font-size-2);
+  text-transform: capitalize;
+  letter-spacing: var(--letter-spacing-1);
+}
+
+.header_subtitle{
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-1);
+    color: var(--text-color-1);
+}   
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 2rem;
+}
+
+.card{
+  position: relative;
+  overflow: hidden;
+  background: var(--card-background);
+  color: var(--text-color-1);
+  padding: 25px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.facebook-card{
+  border-top: 10px solid var(--facebook);
+}
+
+.twitter-card{
+  border-top: 10px solid var(--twitter);
+}
+
+/* .instagram-card{  
+  padding-top: 30px;
+} */
+
+.instagram-card::before{
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 10px;
+  background: var(--instagram);
+}
+
+.youtube-card{
+  border-top: 10px solid var(--youtube);
+}
+
+.card-platform{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  margin: 1rem auto;
+  gap: 0.5rem;
+  font-size: var(--font-size-1);
+}
+
+.card-large-font{
+  font-weight: var(--weight-bold);
+  font-size: var(--font-size-3);
+  color: var(--text-color-2);
+  letter-spacing: var(--letter-spacing-1);
+}
+
+.card-small-font{
+  font-weight: var(--weight-bold);
+  font-size: var(--font-size-2);
+  color: var(--text-color-2);
+  letter-spacing: var(--letter-spacing-1);
+}
+
+.card-caps-font{
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-2);
+}
+
+.card-change{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--font-size-1);
+  margin-top: 2rem;
+  font-weight: var(--weight-bold);
+}
+
+.card-change-up{
+  color: var(--lime-green);
+}
+
+.card-change-down{
+  color: var(--bright-red);
+}
+
+.card-grid{
+  display: grid;
+  justify-content: start;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  row-gap: 2rem;
+}
+
+.card_subtitle{
+  font-size: var(--font-size-1);
+  font-weight: var(--weight-bold);
+  color: var(--text-color-1);
+}
+
+.card-followers-count,
+.card_subtitle{
+  margin-bottom: 0;
+  justify-self: start;
+}
+
+img,
+.card-change{
+  justify-self: end;
+}
+
+@media only screen and (max-width: 600px) {
+  .cards{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+  .cards{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Toggle-button */
+.toggle-container{
+  display: flex;
+  color: var(--text-color-1);
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  border: none;
+}
+
+.toggle-btn{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.toggleView{
+  width: 80px;
+  background: var(--bg-dark-toggle);
+  height: 40px;
+  border-radius: 40px;
+  position: relative;
+  transition: 0.5s;
+}
+
+
+.toggleView::before{
+  width: 35px;
+  background: var(--toggle-dark-btn);
+  position: absolute;
+  height: 35px;
+  content: '';
+  border-radius: 50%;
+  margin: 3px;
+  transition: 0.5s;
+}
+
+.toggle-btn input{
+  display: none;
+}
+
+input:checked + .toggleView{
+  background: var(--bg-light-toggle);
+}
+
+input:checked + .toggleView::before{
+  transform: translateX(100%);
+  background: var(--toggle-light-btn);
+}
+
+
+@media (prefers-color-scheme: dark){
+  :root{    
+    --background: var(--bg-dark);
+    --header-background: var(--bg-header-dark); 
+    --text-color-1: var(--text-light-1);
+    --text-color-2: var(--text-light-2);
+    --card-background: var(--bg-dark-card);
+  }
+}
